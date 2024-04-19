@@ -32,7 +32,7 @@ cd build
 **Step 3:** Use CMake:
 ```bash
 cmake ..
-cmake --build . --config Debug/Release
+cmake --build . --config <Debug|Release>
 ``` 
 
 **Step 4:** Build the project and run the program:
