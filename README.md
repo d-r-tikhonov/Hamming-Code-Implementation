@@ -38,7 +38,7 @@ cmake --build . --config <Debug|Release>
 **Step 4:** Build the project and run the program:
 ```bash
 make
-./HammingCode
+./bin/HammingCode
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ make
 ## TODO List
 
 ## References
-Further information about the Hamming encoding algorithm employed within `hamming-codec` can be found in the following resources:
+Further information about the Hamming encoding algorithm employed within `hamming-code-implementation` can be found in the following resources:
   * [3Blue1Brown's "Hamming codes and error correction"](https://www.youtube.com/watch?v=X8jsijhllIA)
   * [tutorialspoint's "Error Correcting Codes - Hamming codes"](https://www.tutorialspoint.com/error-correcting-codes-hamming-codes)
   * [Daniel Antrim "Hamming-codec"](https://github.com/dantrim/hamming-codec)
