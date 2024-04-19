@@ -84,6 +84,8 @@ Tasks related to new content.
 - [ ] Add readme file with newline #example
 - [ ] Add a description of the algorithm
 
+____
+
 ### Release
 
 - [ ] Make unit tests
