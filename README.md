@@ -23,7 +23,7 @@ git clone git@github.com:d-r-tikhonov/Hamming-Code-Implementation.git
 cd Hamming-Code-Implementation
 ```
 
-**Step 2:** Create ***build*** folder.
+**Step 2:** Create `build` folder.
 ```bash
 mkdir build
 cd build
@@ -45,6 +45,7 @@ make
 
 ### Examples
 
+Single-bit Error Correction
 ```c++
     ...
     #include "hamming_code.hpp"
@@ -59,15 +60,41 @@ make
     std::cout << "Decoded message: 0x" << std::hex << std::stoul(decoded_message, 0, 2) << std::endl;
 
     std::string encoded_noise_message = replaceRandomChar(encoded_message);
-    ASSERT(encoded_message.length() == encoded_noise_message.length())
     std::cout << "Noise encoded message: 0x" << std::hex << std::stoul(encoded_noise_message, 0, 2) << std::endl;
 
     std::string decoded_noise_message = hamming_code::decode(std::stoul(encoded_noise_message, 0, 2), encoded_noise_message.length());
     std::cout << "Decoded noise message: 0x" << std::hex << std::stoul(decoded_noise_message, 0, 2) << std::endl;
     ...
 ```
+As a result of the program execution:
+
+```bash
+Encoded message: 0x8a3ac
+Decoded message: 0x4235
+Noise encoded message: 0xa3ac
+Decoded noise message: 0x4235
+```
 
 ## TODO List
+
+### Content
+
+Tasks related to new content.
+
+- [ ] Add readme file with newline #example
+- [ ] Add a description of the algorithm
+
+## Release
+
+- [] Make unit tests
+- [] Make more examples
+
+### DONE
+
+- [x] Make an implementation of Hamming's code
+- [x] Create new `CMakeLists.txt`
+- [x] Create README.md
+
 
 ## References
 Further information about the Hamming encoding algorithm employed within `hamming-code-implementation` can be found in the following resources:
