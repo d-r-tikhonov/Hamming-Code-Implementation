@@ -8,8 +8,8 @@
 #include <algorithm>
 #include <cstdint>
 #include <cmath>
-#include "utils.h"
-#include "errors.h"
+#include "utils.hpp"
+#include "errors.hpp"
 
 namespace hamming_code
 {

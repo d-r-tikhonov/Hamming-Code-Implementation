@@ -1,5 +1,5 @@
 #include <iostream>
-#include "hamming_code.h"
+#include "hamming_code.hpp"
 
 int main()
 {

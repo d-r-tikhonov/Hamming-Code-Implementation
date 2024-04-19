@@ -8,7 +8,7 @@
 #include <cstring>
 #include <cstdint>
 #include <vector>
-#include "errors.h"
+#include "errors.hpp"
 
 namespace utils
 {
