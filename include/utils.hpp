@@ -17,9 +17,9 @@ namespace utils
         std::string binary_string = "";
         uint64_t mask = 1;
 
-        for(uint32_t index = 0; index < n_bits; index++)
+        for (uint32_t index = 0; index < n_bits; index++)
         {
-            if((mask & data) >= 1)
+            if ((mask & data) >= 1)
             {
                 binary_string = "1" + binary_string;
             }
@@ -39,7 +39,7 @@ namespace utils
     {
         std::stringstream sx;
 
-        for(const auto& x : vec)
+        for (const auto& x : vec)
         {
             sx << x;
         }
@@ -66,7 +66,7 @@ namespace utils
         
         auto fp = [&reversed_fill, flag](std::string ch)
         {
-            if(ch == flag)
+            if (ch == flag)
             {
                 auto new_value = reversed_fill.back();
                 reversed_fill.pop_back();
@@ -88,9 +88,9 @@ namespace utils
     {
         std::stringstream output; //fix
 
-        for(size_t index = 0; index < init.size(); index++)
+        for (size_t index = 0; index < init.size(); index++)
         {
-            if(std::find(positions.begin(), positions.end(), index) == positions.end())
+            if (std::find(positions.begin(), positions.end(), index) == positions.end())
             {
                 output << init[index];
             }

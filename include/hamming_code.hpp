@@ -24,12 +24,12 @@ namespace hamming_code
     {
         uint64_t p_bits = 1;
 
-        while(true)
+        while (true)
         {
             uint64_t lhs = pow(2,p_bits);
             uint64_t rhs = p_bits + n_bits + 1;
 
-            if(lhs < rhs)
+            if (lhs < rhs)
                 p_bits++;
             else
                 break;
@@ -42,7 +42,7 @@ namespace hamming_code
     {
         std::vector<uint64_t> positions;
 
-        for(size_t index = 0; index < parity_bits_amount; index++)
+        for (size_t index = 0; index < parity_bits_amount; index++)
         {
             positions.push_back(pow(2,index) - 1);
         }
@@ -57,7 +57,7 @@ namespace hamming_code
 
         size_t binary_string_length = binary_string.length();
 
-        for(size_t index = 0; index < binary_string_length + 1; index++)
+        for (size_t index = 0; index < binary_string_length + 1; index++)
         {
             range.push_back(index);
         }
@@ -81,7 +81,7 @@ namespace hamming_code
             };
 
             std::vector<unsigned> redundant_bits_pos(range.size());
-            auto it = std::copy_if(range.begin(), range.end(), redundant_bits_pos.begin(), filter_func);
+            auto it = std::copy_if (range.begin(), range.end(), redundant_bits_pos.begin(), filter_func);
             redundant_bits_pos.resize(std::distance(redundant_bits_pos.begin(), it));
 
             std::vector<unsigned> data_sel;
@@ -93,7 +93,7 @@ namespace hamming_code
 
             auto fxor = [&](int x, int y) {return x ^ y;};
             auto xor_result = std::accumulate(data_sel.begin(), data_sel.end(), 0, fxor);
-            if(xor_result == 1)
+            if (xor_result == 1)
             {
                 parity_bits[index] = 1;
             }
@@ -108,9 +108,9 @@ namespace hamming_code
 
         unsigned data_idx = 0;
 
-        for(unsigned index = 0; index < length; index++)
+        for (unsigned index = 0; index < length; index++)
         {
-            if(std::find(skip_positions.begin(), skip_positions.end(), index) == skip_positions.end())
+            if (std::find(skip_positions.begin(), skip_positions.end(), index) == skip_positions.end())
             {
                 seed_string_array[index] = word_to_split[data_idx++];
             }
@@ -134,7 +134,7 @@ namespace hamming_code
         std::string seed_string = utils::join(seed_string_array);
 
         ASSERT(seed_string_array.size() == encoded_message_length)
-        if(seed_string_array.size() != encoded_message_length) 
+        if (seed_string_array.size() != encoded_message_length) 
         {
             std::stringstream e;
             e << "Length of seed string (=" << seed_string_array.size() << ") does not match the expected (=" << encoded_message_length << ")";
@@ -144,7 +144,7 @@ namespace hamming_code
         std::vector<uint32_t> parity_bits = compute_parity_bits(seed_string, parity_bit_positions, false);
 
         ASSERT(parity_bits.size() == parity_bits_amount)
-        if(parity_bits.size() != parity_bits_amount) 
+        if (parity_bits.size() != parity_bits_amount) 
         {
             std::stringstream e;
             e << "Number of computed parity bits (=" << parity_bits.size() << ") does not match the expected number (=" << parity_bits_amount << ")";
@@ -156,7 +156,7 @@ namespace hamming_code
 
         std::string encoded_output_string{""};
 
-        switch(parity_loc)
+        switch (parity_loc)
         {
             case ParityLocation::DEFAULT:
             {
@@ -169,7 +169,7 @@ namespace hamming_code
             case ParityLocation::MSB:
             {
                 seed_string_array.erase(std::remove(seed_string_array.begin(), seed_string_array.end(), "x"), seed_string_array.end());
-                for(const auto& p : parity_bit_chars)
+                for (const auto& p : parity_bit_chars)
                 {
                     seed_string_array.push_back(p);
                 }
@@ -182,7 +182,7 @@ namespace hamming_code
             case ParityLocation::LSB:
             {
                 seed_string_array.erase(std::remove(seed_string_array.begin(), seed_string_array.end(), "x"), seed_string_array.end());
-                for(const auto& p : parity_bit_chars)
+                for (const auto& p : parity_bit_chars)
                 {
                     encoded_output_string += p;
                 }
@@ -202,7 +202,7 @@ namespace hamming_code
         std::string message_with_parity{""};
 
         ASSERT(parity_bit_block_str.length() == parity_bit_positions.size())
-        if(parity_bit_block_str.length() != parity_bit_positions.size()) 
+        if (parity_bit_block_str.length() != parity_bit_positions.size()) 
         {
             throw std::runtime_error("Parity bit block string (\"" + parity_bit_block_str + "\") size != parity bit positions vector (size = " + std::to_string(parity_bit_positions.size()) + ")");
         }
@@ -214,9 +214,9 @@ namespace hamming_code
         size_t data_idx = 0;
         size_t parity_idx = 0;
 
-        for(size_t ipos = 0; ipos < message_length; ipos++) 
+        for (size_t ipos = 0; ipos < message_length; ipos++) 
         {
-            if(std::find(parity_bit_positions.begin(), parity_bit_positions.end(), ipos) == parity_bit_positions.end()) 
+            if (std::find(parity_bit_positions.begin(), parity_bit_positions.end(), ipos) == parity_bit_positions.end()) 
             {
                 message_with_parity += reversed_in[data_idx++];
             } 
@@ -233,22 +233,22 @@ namespace hamming_code
     {
         std::string binary_string = utils::int2bin(data, n_bits);
 
-        if(n_parity_bits == 0 && parity_loc != ParityLocation::DEFAULT) 
+        if (n_parity_bits == 0 && parity_loc != ParityLocation::DEFAULT) 
         {
             throw std::logic_error("Cannot decode message: must specify number of parity bits for non-default encoding");
         } 
-        else if(n_parity_bits > 0 && parity_loc == ParityLocation::DEFAULT) 
+        else if (n_parity_bits > 0 && parity_loc == ParityLocation::DEFAULT) 
         {
             throw std::logic_error("Cannot decode message: cannot specify number of parity bits for default encoding");
         } 
-        else if(n_parity_bits == 0) 
+        else if (n_parity_bits == 0) 
         {
             n_parity_bits = n_parity_bits_required(n_bits);
         }
 
         std::vector<uint64_t> parity_bit_positions = compute_parity_bit_positions(n_parity_bits);
                                         
-        switch(parity_loc) 
+        switch (parity_loc) 
         {
             case ParityLocation::MSB: 
             {
@@ -282,7 +282,7 @@ namespace hamming_code
 
         std::string decoded_string = binary_string_reversed;
 
-        if(error_position > 0) 
+        if (error_position > 0) 
         {
             decoded_string[error_position - 1] = (decoded_string[error_position-1] == '0') ? '1' : '0';
         }
