@@ -91,12 +91,15 @@ ____
 - [ ] Make unit tests
 - [ ] Make more examples
 
+_____
+
 ### DONE
 
 - [x] Make an implementation of Hamming's code
 - [x] Create new `CMakeLists.txt`
 - [x] Create README.md
 
+___
 
 ## References
 Further information about the Hamming encoding algorithm employed within `hamming-code-implementation` can be found in the following resources:
