@@ -86,8 +86,8 @@ Tasks related to new content.
 
 ## Release
 
-- [] Make unit tests
-- [] Make more examples
+- [ ] Make unit tests
+- [ ] Make more examples
 
 ### DONE
 
