@@ -10,6 +10,8 @@ endif()
 set(CMAKE_CXX_FLAGS_DEBUG "-D DEBUG -O0 -g -Wall -fsanitize=address")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
