@@ -1,5 +1,5 @@
-#ifndef HAMMING_CODE_H
-#define HAMMING_CODE_H
+#ifndef HAMMING_CODE_HPP
+#define HAMMING_CODE_HPP
 
 #include <string>
 #include <vector>
@@ -295,4 +295,4 @@ namespace hamming_code
     }
 }
 
-#endif /* HAMMING_CODE_H */
+#endif /* HAMMING_CODE_HPP */
