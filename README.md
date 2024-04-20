@@ -6,9 +6,12 @@ This project is a task on course "Fundamentals of telecommunication technologies
 1. [Requirements](#requirements)
 2. [Building](#building)
 3. [Usage](#usage)
-     * [Examples](#c-examples)
-4. [TODO List](todo-list)
-5. [References](#references)
+    * [Examples](#c-examples)
+4. [How it works](#how-it-works)
+    * [Encoding](#encoding-message)
+    * [Decoding](#decoding-message)
+5. [TODO List](todo-list)
+6. [References](#references)
 
 ## Requirements
 
@@ -17,7 +20,7 @@ The following application has to be installed:
 
 ## Building
 
-**Step 1:** Clone this repository
+**Step 1:** Clone this repository.
 ```bash
 git clone git@github.com:d-r-tikhonov/Hamming-Code-Implementation.git
 cd Hamming-Code-Implementation
@@ -75,6 +78,24 @@ Noise encoded message: 0xa3ac
 Decoded noise message: 0x4235
 ```
 
+## How it works
+
+Hamming code is a block code that is capable of detecting up to two simultaneous bit errors and correcting single-bit errors. It was developed by R.W. Hamming for error correction.
+
+In this coding method, the source encodes the message by inserting redundant bits within the message. These redundant bits are extra bits that are generated and inserted at specific positions in the message itself to enable error detection and correction. When the destination receives this message, it performs recalculations to detect errors and find the bit position that has error.
+
+### Encoding message
+
+**Step 1:** Calculation of the number of redundant bits.
+
+If the message contains n number of data bits, p number of redundant bits are added to it then the inequality $2^p \geq n + p + 1$ must be satisfied so that 1 error can be corrected. 
+
+_Question_: the Hamming code is used to transmit 16-bit messages. How many redundant bits would be required for the receiver to be guaranteed to be able to detect and correct single bit errors? 
+> Answer: 5 bits
+
+
+### Decoding message
+
 ## TODO List
 
 ### Content
@@ -90,8 +111,10 @@ ____
 
 - [ ] Make unit tests
 - [ ] Make more examples
+- [ ] Make a client and server simulation
+- [ ] Make documentation
 
-_____
+____
 
 ### DONE
 
@@ -99,7 +122,7 @@ _____
 - [x] Create new `CMakeLists.txt`
 - [x] Create README.md
 
-___
+____
 
 ## References
 Further information about the Hamming encoding algorithm employed within `hamming-code-implementation` can be found in the following resources:
