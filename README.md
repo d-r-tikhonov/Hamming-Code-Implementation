@@ -93,8 +93,20 @@ If the message contains n number of data bits, p number of redundant bits are ad
 _Question_: the Hamming code is used to transmit 16-bit messages. How many redundant bits would be required for the receiver to be guaranteed to be able to detect and correct single bit errors? 
 > Answer: 5 bits
 
+***Step 2:*** Positioning the redundant bits.
+
+***Step 3:*** Calculating the values of each redundant bit.
+
 
 ### Decoding message
+
+***Step 1*** Calculation of the number of redundant bits.
+
+***Step 2*** Positioning the redundant bits.
+
+***Step 3*** Parity checking.
+
+***Step 4*** Error detection and correction.
 
 ## TODO List
 
