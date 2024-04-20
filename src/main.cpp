@@ -34,11 +34,15 @@ int main()
 
     std::string encoded_noise_message = replaceRandomChar(encoded_message);
     ASSERT(encoded_message.length() == encoded_noise_message.length())
-    std::cout << "Noise encoded message: 0x" << std::hex << std::stoul(encoded_noise_message, 0, 2) << std::endl;
+    std::cout << "\nNoise encoded message: 0x" << std::hex << std::stoul(encoded_noise_message, 0, 2) << std::endl;
 
     std::string decoded_noise_message = hamming_code::decode(std::stoul(encoded_noise_message, 0, 2), encoded_noise_message.length());
     std::cout << "Decoded noise message: 0x" << std::hex << std::stoul(decoded_noise_message, 0, 2) << std::endl;
 
+    n_bits = 12;
+    uint32_t message = 0xE4F;
+    decoded_message = hamming_code::decode(message, n_bits);
+    std::cout << "\nDecoded message: 0x" << std::hex << std::stoul(decoded_message, 0, 2) << std::endl;
 
     return 0;
 }
