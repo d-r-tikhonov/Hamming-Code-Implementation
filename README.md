@@ -86,7 +86,7 @@ In this coding method, the source encodes the message by inserting redundant bit
 
 ### Encoding message
 
-***Step 1:*** Calculation of the number of redundant bits.
+* ***Step 1:*** Calculation of the number of redundant bits.
 
 If the message contains n number of data bits, p number of redundant bits are added to it then the inequality $2^p \geq n + p + 1$ must be satisfied so that 1 error can be corrected. 
 
@@ -96,27 +96,27 @@ If the message contains n number of data bits, p number of redundant bits are ad
 > [!TIP]
 > Answer: 5 bits.
 
-***Step 2:*** Positioning the redundant bits.
+* ***Step 2:*** Positioning the redundant bits.
 
-***Step 3:*** Calculating the values of each redundant bit.
+* ***Step 3:*** Calculating the values of each redundant bit.
 
 ![Example of encode](images/encode.png)
-***For example,*** Let 100001 is the input message then 00100001001 is the encode message.
+* ***For example,*** let 100001 is the input message then 00100001001 is the encode message.
 
 
 ### Decoding message
 
-***Step 1:*** Calculation of the number of redundant bits.
+* ***Step 1:*** Calculation of the number of redundant bits.
 
-***Step 2:*** Positioning the redundant bits.
+* ***Step 2:*** Positioning the redundant bits.
 
-***Step 3:*** Parity checking.
+* ***Step 3:*** Parity checking.
 
-***Step 4:*** Error detection and correction.
+* ***Step 4:*** Error detection and correction.
 
 ![Example of decode](images/decode.png)
 
-***For example,*** Let 00101001001 is the accepted code vector then $s = 0105 = 5$ the error is in the 5th position.
+* ***For example,*** let 00101001001 is the accepted code vector then $s = 0105 = 5$ the error is in the 5th position.
 
 ## TODO List
 
