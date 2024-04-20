@@ -20,25 +20,25 @@ The following application has to be installed:
 
 ## Building
 
-**Step 1:** Clone this repository.
+***Step 1:*** Clone this repository.
 ```bash
 git clone git@github.com:d-r-tikhonov/Hamming-Code-Implementation.git
 cd Hamming-Code-Implementation
 ```
 
-**Step 2:** Create `build` folder.
+***Step 2:*** Create `build` folder.
 ```bash
 mkdir build
 cd build
 ```
 
-**Step 3:** Use CMake:
+***Step 3:*** Use CMake:
 ```bash
 cmake ..
 cmake --build . --config <Debug|Release>
 ``` 
 
-**Step 4:** Build the project and run the program:
+***Step 4:*** Build the project and run the program:
 ```bash
 make
 ./bin/HammingCode
@@ -86,7 +86,7 @@ In this coding method, the source encodes the message by inserting redundant bit
 
 ### Encoding message
 
-**Step 1:** Calculation of the number of redundant bits.
+***Step 1:*** Calculation of the number of redundant bits.
 
 If the message contains n number of data bits, p number of redundant bits are added to it then the inequality $2^p \geq n + p + 1$ must be satisfied so that 1 error can be corrected. 
 
