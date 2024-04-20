@@ -125,7 +125,7 @@ If the message contains n number of data bits, p number of redundant bits are ad
 Tasks related to new content.
 
 - [ ] Add readme file with newline #example
-- [ ] Add a description of the algorithm
+- [x] Add a description of the algorithm
 
 ____
 
