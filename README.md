@@ -116,7 +116,7 @@ If the message contains n number of data bits, p number of redundant bits are ad
 
 ![Example of decode](images/decode.png)
 
-* ***For example,*** let 00101001001 is the accepted code vector then $s = 0105 = 5$ the error is in the 5th position.
+* ***For example,*** let 00101001001 is the accepted code vector then $s = 0101 = 5$ the error is in the 5th position.
 
 ## TODO List
 
